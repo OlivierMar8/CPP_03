@@ -17,13 +17,13 @@ class ClapTrac {
 		ClapTrac &	operator=( ClapTrac const & rhs );//Canonique
 
 		std::string	getName( void ) const;
-		void		setName( std::string name );
+		void		setName( std::string const name );
 		int			getHitPoints( void ) const;
-		void		setHitPoints( int p );
+		void		setHitPoints( int const p );
 		int			getEnergyPoints( void ) const;
-		void		setEnergyPoints( int e );
+		void		setEnergyPoints( int const e );
 		int			getAttackDamage( void ) const;
-		void		setAttackDamage( int a );
+		void		setAttackDamage( int const a );
 		
 		void		attack( const std::string & target );
 		void		takeDamage(unsigned int amount );
@@ -35,6 +35,8 @@ class ClapTrac {
 		int			_hitPoints;
 		int			_energyPoints;
 		int			_attackDamage;	
+
+		static const int	_cost  = 1;
 
 		ClapTrac( void );					//Canonique
 };
