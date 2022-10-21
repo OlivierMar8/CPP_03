@@ -1,10 +1,10 @@
 #Makefile   CPP03   ex00
 
-SRCS		= main.cpp ClapTrap.cpp
+SRCS		= main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
-NAME		= clapTrap
+NAME		= clapTrac
 
 CC			= c++-12 #c++-12
 

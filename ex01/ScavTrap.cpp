@@ -1,39 +1,39 @@
-//ClapTrac.cpp CPP03   ex00
+//ScavTrap.cpp CPP03   ex01
 
 #include <iostream>
-#include "ClapTrac.hpp"
+#include "ScavTrap.hpp"
 
-ClapTrac::ClapTrac( void ) {
+ScavTrap::ScavTrap( void ) {
 
-	std::cout << "ClapTrac default Constructor called" << std::endl;
+	std::cout << "ScavTrap default Constructor called" << std::endl;
 	return;
 }
 
-ClapTrac::ClapTrac( std::string name ) : _name(name),
-	_hitPoints( 10 ),
-	_energyPoints( 10 ),
-	_attackDamage( 0 ) {
+ScavTrap::ScavTrap( std::string name ) : _name(name),
+	_hitPoints( 100 ),
+	_energyPoints( 50 ),
+	_attackDamage( 20 ) {
 
-	std::cout << "ClapTrac parametric Constructor called" << std::endl;
+	std::cout << "ScavTrap parametric Constructor called" << std::endl;
 	return;
 }
 
-ClapTrac::ClapTrac( ClapTrac const & src ) {
+ScavTrap::ScavTrap( ScavTrap const & src ) {
 
-	std::cout << "ClapTrac copy Constructor called" << std::endl;
+	std::cout << "ScavTrap copy Constructor called" << std::endl;
 	*this = src;
 	return;
 }
 
-ClapTrac::~ClapTrac( void ) {
+ScavTrap::~ScavTrap( void ) {
 
-		std::cout << "ClapTrac destructor called" << std::endl;
+		std::cout << "ScavTrap destructor called" << std::endl;
 		return;
 }
 
-ClapTrac &	ClapTrac::operator=( ClapTrac const & rhs) {
+ScavTrap &	ScavTrap::operator=( ScavTrap const & rhs) {
 
-		std::cout << "ClapTrac copy assignement operator called" << std::endl;
+		std::cout << "ScavTrap copy assignement operator called" << std::endl;
 
 		if ( this != &rhs )
 		{
@@ -45,51 +45,51 @@ ClapTrac &	ClapTrac::operator=( ClapTrac const & rhs) {
 		return *this;
 }
 
-std::string	ClapTrac::getName( void ) const {
+std::string	ScavTrap::getName( void ) const {
 
 		return _name;
 }
 
-void	ClapTrac::setName( std::string const name ) {
+void	ScavTrap::setName( std::string const name ) {
 
 		_name = name;
 		return;
 }
 
-int		ClapTrac::getHitPoints( void ) const {
+int		ScavTrap::getHitPoints( void ) const {
 
 		return _hitPoints;
 }
 
-void	ClapTrac::setHitPoints( int const p ) {
+void	ScavTrap::setHitPoints( int const p ) {
 
 		_hitPoints = p;
 		return;
 }
 
-int		ClapTrac::getEnergyPoints( void ) const {
+int		ScavTrap::getEnergyPoints( void ) const {
 
 		return _energyPoints;
 }
 
-void	ClapTrac::setEnergyPoints( int const e ) {
+void	ScavTrap::setEnergyPoints( int const e ) {
 
 		_energyPoints = e;
 		return;
 }
   
-int		ClapTrac::getAttackDamage( void ) const {
+int		ScavTrap::getAttackDamage( void ) const {
 
 		return _attackDamage;
 }
 
-void	ClapTrac::setAttackDamage( int const a ) {
+void	ScavTrap::setAttackDamage( int const a ) {
 
 		_attackDamage = a;
 		return;
 }
 
-void	ClapTrac::attack( const std::string & target ) {
+void	ScavTrap::attack( const std::string & target ) {
 
 	if ( _hitPoints > 0 && _energyPoints > 0)
 	{
@@ -107,14 +107,14 @@ void	ClapTrac::attack( const std::string & target ) {
 	return;
 }
 
-void	ClapTrac::takeDamage( unsigned int amount ) {
+void	ScavTrap::takeDamage( unsigned int amount ) {
 
 	std::cout << _name << " take " << amount << " points of damage!"
 		<< std::endl;
 	return;
 }
 
-void	ClapTrac::beRepaired( unsigned int amount ) {
+void	ScavTrap::beRepaired( unsigned int amount ) {
 
 	if ( _hitPoints > 0 && _energyPoints > 0)
 	{
@@ -131,12 +131,9 @@ void	ClapTrac::beRepaired( unsigned int amount ) {
 	}
 	return;
 }
-//  OK OK
-/*
-std::ostream &	operator<<( std::ostream & o, ClapTrac const & i) {
 
-	o  << i.toFloat();
+void	ScavTrap::guardGate() {
 
-	return o;
+	std::cout << _name << " entered the Gate keeper mode!" << std::endl;
+	return;
 }
-*/
