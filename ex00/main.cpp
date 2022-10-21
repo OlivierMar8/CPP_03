@@ -5,7 +5,7 @@
 
 int	main( void )
 {
-	ClapTrac  a( "Clap" );
+	ClapTrac  a( "Toc" );
 	ClapTrac const d( a );
 
 
@@ -20,5 +20,18 @@ int	main( void )
 	std::cout << "a is " << a.getEnergyPoints()  << std::endl;
 	std::cout << "c is " << a.getAttackDamage()  << std::endl;
 
+	a.attack("Test");
+	std::cout << "d is " << a.getHitPoints() << std::endl;
+	a.attack("Test");
+	a.attack("Test");
+	a.attack("Test");
+	a.attack("Test");
+	a.attack("Test");
+	a.attack("Test");
+	a.attack("Test");
+	a.attack("Test");
+	a.attack("Test");
+	a.attack("Test");
+	std::cout << "d is " << a.getHitPoints() << std::endl;
 	return 0;
 }

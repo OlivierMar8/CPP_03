@@ -90,9 +90,19 @@ void	ClapTrac::setAttackDamage( int const a ) {
 }
 
 void	ClapTrac::attack( const std::string & target ) {
-	
-	std::cout << _name << " attacks " << target << ", causing " 
-	<< _cost << " points of damage!" << std::endl;
+
+	if ( _hitPoints > 0 && _energyPoints > 0)
+	{
+		std::cout << _name << " attacks " << target << ", causing " 
+		<< _cost << " points of damage!" << std::endl;
+		_hitPoints -= _cost;
+	}
+	else
+	{
+		std::cout << _name << " can't attack! Infos: " << _hitPoints
+			<< " Hits point, " << _energyPoints << " Energy Points"
+			<< std::endl;
+	}
 	return;
 }
 
