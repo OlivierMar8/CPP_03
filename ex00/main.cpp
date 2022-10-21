@@ -5,22 +5,17 @@
 
 int	main( void )
 {
-	ClapTrac  a( "Toc" );
-	ClapTrac const d( a );
+	ClapTrac  a( "Clap" );
+	ClapTrac  d( a );
+	d.setName("a");
 
-
-	/*
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-*/
 	std::cout << "a is " << a.getName()  << std::endl;
 	std::cout << "d is " << a.getHitPoints() << std::endl;
 	std::cout << "a is " << a.getEnergyPoints()  << std::endl;
 	std::cout << "c is " << a.getAttackDamage()  << std::endl;
 
 	a.attack("Test");
+	d.attack("Clap");
 	std::cout << "d is " << a.getHitPoints() << std::endl;
 	a.attack("Test");
 	a.attack("Test");
@@ -28,10 +23,12 @@ int	main( void )
 	a.attack("Test");
 	a.attack("Test");
 	a.attack("Test");
+	a.beRepaired( 5 );
 	a.attack("Test");
 	a.attack("Test");
 	a.attack("Test");
 	a.attack("Test");
 	std::cout << "d is " << a.getHitPoints() << std::endl;
+	a.beRepaired( 5 );
 	return 0;
 }

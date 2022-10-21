@@ -12,7 +12,7 @@ ClapTrac::ClapTrac( void ) {
 ClapTrac::ClapTrac( std::string name ) : _name(name),
 	_hitPoints( 10 ),
 	_energyPoints( 10 ),
-	_attackDamage( 10 ) {
+	_attackDamage( 0 ) {
 
 	std::cout << "ClapTrac parametric Constructor called" << std::endl;
 	return;
@@ -95,7 +95,8 @@ void	ClapTrac::attack( const std::string & target ) {
 	{
 		std::cout << _name << " attacks " << target << ", causing " 
 		<< _cost << " points of damage!" << std::endl;
-		_hitPoints -= _cost;
+		_energyPoints -= _cost;
+		//cible perd attackDamage hit points ??
 	}
 	else
 	{
@@ -115,8 +116,19 @@ void	ClapTrac::takeDamage( unsigned int amount ) {
 
 void	ClapTrac::beRepaired( unsigned int amount ) {
 
-	std::cout << _name << " has been repaired, regaining " 
-	<< amount << " points!" <<  std::endl;
+	if ( _hitPoints > 0 && _energyPoints > 0)
+	{
+		std::cout << _name << " has been repaired, regaining " 
+		<< amount << " points!" <<  std::endl;
+		_energyPoints -= _cost;
+		_hitPoints += amount;
+	}
+	else
+	{
+		std::cout << _name << " can't be repaired! Infos: " << _hitPoints
+			<< " Hits point, " << _energyPoints << " Energy Points"
+			<< std::endl;
+	}
 	return;
 }
 //  OK OK
