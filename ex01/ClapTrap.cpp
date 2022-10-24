@@ -1,4 +1,4 @@
-//ClapTrap.cpp CPP03   ex00
+//ClapTrap.cpp CPP03   ex01
 
 #include <iostream>
 #include "ClapTrap.hpp"
@@ -93,7 +93,7 @@ void	ClapTrap::attack( const std::string & target ) {
 
 	if ( _hitPoints > 0 && _energyPoints > 0)
 	{
-		std::cout << _name << " attacks " << target << ", causing " 
+		std::cout<< _name << " attacks " << target << ", causing " 
 		<< _cost << " points of damage!" << std::endl;
 		_energyPoints -= _cost;
 		//cible perd attackDamage hit points ??
@@ -131,12 +131,4 @@ void	ClapTrap::beRepaired( unsigned int amount ) {
 	}
 	return;
 }
-//  OK OK
-/*
-std::ostream &	operator<<( std::ostream & o, ClapTrap const & i) {
 
-	o  << i.toFloat();
-
-	return o;
-}
-*/

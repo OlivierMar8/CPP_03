@@ -1,4 +1,4 @@
-//ClapTrac.hpp CPP03   ex00
+//ClapTrap.hpp CPP03   ex00
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
@@ -6,15 +6,16 @@
 # include <iostream>
 # include <string>
 
-class ClapTrac {
+class ClapTrap {
 
 	public:
 
-		ClapTrac( std::string const name );
-		ClapTrac( ClapTrac const & src );	//Canonique	
-		~ClapTrac( void );				//Canonique	
+		ClapTrap( void );					//Canonique
+		ClapTrap( std::string const name );
+		ClapTrap( ClapTrap const & src );	//Canonique	
+		~ClapTrap( void );				//Canonique	
 
-		ClapTrac &	operator=( ClapTrac const & rhs );//Canonique
+		ClapTrap &	operator=( ClapTrap const & rhs );//Canonique
 
 		std::string	getName( void ) const;
 		void		setName( std::string const name );
@@ -38,9 +39,6 @@ class ClapTrac {
 
 		static const int	_cost  = 1;
 
-		ClapTrac( void );					//Canonique
 };
-/*
-std::ostream &		operator<<( std::ostream & o, ClapTrac const & i );
-*/
+
 #endif

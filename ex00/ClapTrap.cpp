@@ -1,39 +1,39 @@
-//ClapTrac.cpp CPP03   ex00
+//ClapTrap.cpp CPP03   ex00
 
 #include <iostream>
 #include "ClapTrap.hpp"
 
-ClapTrac::ClapTrac( void ) {
+ClapTrap::ClapTrap( void ) {
 
-	std::cout << "ClapTrac default Constructor called" << std::endl;
+	std::cout << "ClapTrap default Constructor called" << std::endl;
 	return;
 }
 
-ClapTrac::ClapTrac( std::string name ) : _name(name),
+ClapTrap::ClapTrap( std::string name ) : _name(name),
 	_hitPoints( 10 ),
 	_energyPoints( 10 ),
 	_attackDamage( 0 ) {
 
-	std::cout << "ClapTrac parametric Constructor called" << std::endl;
+	std::cout << "ClapTrap parametric Constructor called" << std::endl;
 	return;
 }
 
-ClapTrac::ClapTrac( ClapTrac const & src ) {
+ClapTrap::ClapTrap( ClapTrap const & src ) {
 
-	std::cout << "ClapTrac copy Constructor called" << std::endl;
+	std::cout << "ClapTrap copy Constructor called" << std::endl;
 	*this = src;
 	return;
 }
 
-ClapTrac::~ClapTrac( void ) {
+ClapTrap::~ClapTrap( void ) {
 
-		std::cout << "ClapTrac destructor called" << std::endl;
+		std::cout << "ClapTrap destructor called" << std::endl;
 		return;
 }
 
-ClapTrac &	ClapTrac::operator=( ClapTrac const & rhs) {
+ClapTrap &	ClapTrap::operator=( ClapTrap const & rhs) {
 
-		std::cout << "ClapTrac copy assignement operator called" << std::endl;
+		std::cout << "ClapTrap copy assignement operator called" << std::endl;
 
 		if ( this != &rhs )
 		{
@@ -45,51 +45,51 @@ ClapTrac &	ClapTrac::operator=( ClapTrac const & rhs) {
 		return *this;
 }
 
-std::string	ClapTrac::getName( void ) const {
+std::string	ClapTrap::getName( void ) const {
 
 		return _name;
 }
 
-void	ClapTrac::setName( std::string const name ) {
+void	ClapTrap::setName( std::string const name ) {
 
 		_name = name;
 		return;
 }
 
-int		ClapTrac::getHitPoints( void ) const {
+int		ClapTrap::getHitPoints( void ) const {
 
 		return _hitPoints;
 }
 
-void	ClapTrac::setHitPoints( int const p ) {
+void	ClapTrap::setHitPoints( int const p ) {
 
 		_hitPoints = p;
 		return;
 }
 
-int		ClapTrac::getEnergyPoints( void ) const {
+int		ClapTrap::getEnergyPoints( void ) const {
 
 		return _energyPoints;
 }
 
-void	ClapTrac::setEnergyPoints( int const e ) {
+void	ClapTrap::setEnergyPoints( int const e ) {
 
 		_energyPoints = e;
 		return;
 }
   
-int		ClapTrac::getAttackDamage( void ) const {
+int		ClapTrap::getAttackDamage( void ) const {
 
 		return _attackDamage;
 }
 
-void	ClapTrac::setAttackDamage( int const a ) {
+void	ClapTrap::setAttackDamage( int const a ) {
 
 		_attackDamage = a;
 		return;
 }
 
-void	ClapTrac::attack( const std::string & target ) {
+void	ClapTrap::attack( const std::string & target ) {
 
 	if ( _hitPoints > 0 && _energyPoints > 0)
 	{
@@ -107,14 +107,14 @@ void	ClapTrac::attack( const std::string & target ) {
 	return;
 }
 
-void	ClapTrac::takeDamage( unsigned int amount ) {
+void	ClapTrap::takeDamage( unsigned int amount ) {
 
 	std::cout << _name << " take " << amount << " points of damage!"
 		<< std::endl;
 	return;
 }
 
-void	ClapTrac::beRepaired( unsigned int amount ) {
+void	ClapTrap::beRepaired( unsigned int amount ) {
 
 	if ( _hitPoints > 0 && _energyPoints > 0)
 	{
@@ -133,7 +133,7 @@ void	ClapTrac::beRepaired( unsigned int amount ) {
 }
 //  OK OK
 /*
-std::ostream &	operator<<( std::ostream & o, ClapTrac const & i) {
+std::ostream &	operator<<( std::ostream & o, ClapTrap const & i) {
 
 	o  << i.toFloat();
 

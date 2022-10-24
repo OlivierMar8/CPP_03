@@ -1,4 +1,4 @@
-//ClapTrap.hpp CPP03   ex00
+//ClapTrap.hpp CPP03   ex01
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
@@ -10,6 +10,7 @@ class ClapTrap {
 
 	public:
 
+		ClapTrap( void );					//Canonique
 		ClapTrap( std::string const name );
 		ClapTrap( ClapTrap const & src );	//Canonique	
 		~ClapTrap( void );				//Canonique	
@@ -29,7 +30,7 @@ class ClapTrap {
 		void		takeDamage(unsigned int amount );
 		void		beRepaired( unsigned int amount );
 
-	private:
+	protected:
 
 		std::string	_name;
 		int			_hitPoints;
@@ -38,9 +39,6 @@ class ClapTrap {
 
 		static const int	_cost  = 1;
 
-		ClapTrap( void );					//Canonique
 };
-/*
-std::ostream &		operator<<( std::ostream & o, ClapTrap const & i );
-*/
+
 #endif

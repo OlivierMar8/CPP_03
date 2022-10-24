@@ -5,8 +5,8 @@
 
 int	main( void )
 {
-	ClapTrac  a( "Clap" );
-	ClapTrac  d( a );
+	ClapTrap  a( "Clap" );
+	ClapTrap  d( a );
 	d.setName("a");
 
 	std::cout << "a is " << a.getName()  << std::endl;
