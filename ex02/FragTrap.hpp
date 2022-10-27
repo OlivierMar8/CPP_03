@@ -18,10 +18,7 @@ class FragTrap  : public ClapTrap {
 
 		FragTrap &	operator=( FragTrap const & rhs );//Canonique
 
-		void		attack( const std::string & target );
-
 		void		highFivesGuys();
-
 
 };
 

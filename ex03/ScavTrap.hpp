@@ -1,4 +1,4 @@
-//ScavTrap.hpp CPP03   ex03
+//ScavTrap.hpp CPP03   ex02
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
@@ -12,16 +12,13 @@ class ScavTrap  : public ClapTrap {
 	public:
 
 		ScavTrap( void );					//Canonique
-		~ScavTrap( void );				//Canonique	
 		ScavTrap( std::string const name );
 		ScavTrap( ScavTrap const & src );	//Canonique	
-
-		ScavTrap &	operator=( ScavTrap const & rhs );//Canonique
+		~ScavTrap( void );				//Canonique	
 
 		void		attack( const std::string & target );
 
 		void		guardGate();
-
 
 };
 

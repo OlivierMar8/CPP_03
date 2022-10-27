@@ -1,18 +1,12 @@
-//ScavTrap.cpp CPP03   ex03
+//ScavTrap.cpp CPP03   ex02
 
 #include <iostream>
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap( void ) : ClapTrap() {
+ScavTrap::ScavTrap( void ) {
 
 	std::cout << "ScavTrap default Constructor called" << std::endl;
 	return;
-}
-
-ScavTrap::~ScavTrap( void ) {
-
-		std::cout << "ScavTrap destructor called" << std::endl;
-		return;
 }
 
 ScavTrap::ScavTrap( std::string name ) {
@@ -25,38 +19,30 @@ ScavTrap::ScavTrap( std::string name ) {
 	return;
 }
 
-ScavTrap::ScavTrap( ScavTrap const & src ) {
+ScavTrap::ScavTrap( ScavTrap const & src ) : ClapTrap( src ) {
 
 	std::cout << "ScavTrap copy Constructor called" << std::endl;
 	*this = src;
 	return;
 }
 
-ScavTrap &	ScavTrap::operator=( ScavTrap const & rhs) {
+ScavTrap::~ScavTrap( void ) {
 
-		std::cout << "ScavTrap copy assignement operator called" << std::endl;
-
-		if ( this != &rhs )
-		{
-			_name = rhs.getName();
-			_hitPoints = rhs.getHitPoints();
-			_energyPoints = rhs.getEnergyPoints();
-			_attackDamage = rhs.getAttackDamage();
-		}
-		return *this;
+		std::cout << "ScavTrap destructor called" << std::endl;
+		return;
 }
-  
+
 void	ScavTrap::attack( const std::string & target ) {
 
 	if ( _hitPoints > 0 && _energyPoints > 0)
 	{
-		std::cout << _name << " ScavTrap attacks " << target << ", causing " 
+		std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " 
 		<< _cost << " points of damage!" << std::endl;
 		_energyPoints -= _cost;
 	}
 	else
 	{
-		std::cout << _name << " ScavTrap can't attack! Infos: " << _hitPoints
+		std::cout << "ScavTrap " << _name << " can't attack! Infos: " << _hitPoints
 			<< " Hits point, " << _energyPoints << " Energy Points"
 			<< std::endl;
 	}
@@ -65,7 +51,7 @@ void	ScavTrap::attack( const std::string & target ) {
 
 void	ScavTrap::guardGate() {
 
-	std::cout << _name << " entered the Gate keeper mode!" << std::endl;
+	std::cout << "ScavTrap " << _name << " entered the Gate keeper mode!" << std::endl;
 	return;
  }
 

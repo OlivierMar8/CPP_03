@@ -1,4 +1,4 @@
-//ClapTrap.cpp CPP03   ex03
+//ClapTrap.cpp CPP03   ex02
 
 #include <iostream>
 #include "ClapTrap.hpp"
@@ -6,6 +6,10 @@
 ClapTrap::ClapTrap( void ) {
 
 	std::cout << "ClapTrap default Constructor called" << std::endl;
+	_hitPoints = 10;
+	_energyPoints = 10;
+	_attackDamage = 0; 
+
 	return;
 }
 
@@ -93,13 +97,13 @@ void	ClapTrap::attack( const std::string & target ) {
 
 	if ( _hitPoints > 0 && _energyPoints > 0)
 	{
-		std::cout<< _name << " attacks " << target << ", causing " 
+		std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " 
 		<< _cost << " points of damage!" << std::endl;
 		_energyPoints -= _cost;
 	}
 	else
 	{
-		std::cout << _name << " can't attack! Infos: " << _hitPoints
+		std::cout << "ClapTrap " << _name << " can't attack! Infos: " << _hitPoints
 			<< " Hits point, " << _energyPoints << " Energy Points"
 			<< std::endl;
 	}
@@ -110,6 +114,7 @@ void	ClapTrap::takeDamage( unsigned int amount ) {
 
 	std::cout << _name << " take " << amount << " points of damage!"
 		<< std::endl;
+	_attackDamage += amount;
 	return;
 }
 
@@ -118,16 +123,25 @@ void	ClapTrap::beRepaired( unsigned int amount ) {
 	if ( _hitPoints > 0 && _energyPoints > 0)
 	{
 		std::cout << _name << " has been repaired, regaining " 
-		<< amount << " points!" <<  std::endl;
+		<< amount << " hit points!" <<  std::endl;
 		_energyPoints -= _cost;
 		_hitPoints += amount;
 	}
 	else
 	{
 		std::cout << _name << " can't be repaired! Infos: " << _hitPoints
-			<< " Hits point, " << _energyPoints << " Energy Points"
+			<< " Hits point, " << _energyPoints << " Energy points"
 			<< std::endl;
 	}
 	return;
 }
 
+std::ostream &	operator<<( std::ostream & o, ClapTrap const & i) {
+
+	o  << i.getName() << "\tStatus:\n"
+		<< "\t" << i.getHitPoints() << " hit Points\n"
+		<< "\t" << i.getEnergyPoints() << " Energy points\n"
+		<< "\t" << i.getAttackDamage() << " Attack damage";
+
+	return o;
+}

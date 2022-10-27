@@ -1,4 +1,4 @@
-//FragTrap.hpp CPP03   ex03
+//FragTrap.hpp CPP03   ex02
 
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
@@ -12,16 +12,13 @@ class FragTrap  : public ClapTrap {
 	public:
 
 		FragTrap( void );					//Canonique
-		~FragTrap( void );				//Canonique	
 		FragTrap( std::string const name );
 		FragTrap( FragTrap const & src );	//Canonique	
-
-		FragTrap &	operator=( FragTrap const & rhs );//Canonique
+		~FragTrap( void );				//Canonique	
 
 		void		attack( const std::string & target );
 
 		void		highFivesGuys();
-
 
 };
 

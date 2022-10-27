@@ -45,23 +45,6 @@ FragTrap &	FragTrap::operator=( FragTrap const & rhs) {
 		}
 		return *this;
 }
-  
-void	FragTrap::attack( const std::string & target ) {
-
-	if ( _hitPoints > 0 && _energyPoints > 0)
-	{
-		std::cout << _name << " FragTrap attacks " << target << ", causing " 
-		<< _cost << " points of damage!" << std::endl;
-		_energyPoints -= _cost;
-	}
-	else
-	{
-		std::cout << _name << " FragTrap can't attack! Infos: " << _hitPoints
-			<< " Hits point, " << _energyPoints << " Energy Points"
-			<< std::endl;
-	}
-	return;
-}
 
 void	FragTrap::highFivesGuys() {
 
